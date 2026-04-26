@@ -1,0 +1,49 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Inscription - MediFlow{% endblock %}
+
+{% block content %}
+<h1>Inscription</h1>
+<p>Choisissez votre role pour activer le bon tableau de bord.</p>
+<div class="auth-quick-actions">
+    <a class="quick-btn" href="{% url 'page-dashboard' %}">Démo</a>
+    <a class="quick-btn" href="{% url 'page-brochure' %}">Brochure</a>
+    <a class="quick-btn" href="{% url 'contact-page' %}">Contactez-nous</a>
+</div>
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="form-errors">{{ form.non_field_errors }}</div>
+    {% endif %}
+    <p>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.username.help_text }}
+        {{ form.username.errors }}
+    </p>
+    <p>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+    </p>
+    <p>
+        {{ form.role.label_tag }}
+        {{ form.role }}
+        {{ form.role.errors }}
+    </p>
+    <p>
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password1.help_text }}
+        {{ form.password1.errors }}
+    </p>
+    <p>
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        {{ form.password2.help_text }}
+        {{ form.password2.errors }}
+    </p>
+    <button type="submit">Creer mon compte</button>
+</form>
+<p class="auth-note">Vous avez deja un compte ? <a href="{% url 'login' %}">Connexion</a></p>
+{% endblock %}

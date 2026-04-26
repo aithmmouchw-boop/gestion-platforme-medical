@@ -1,0 +1,25 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Nouveau rendez-vous{% endblock %}
+
+{% block content %}
+<h1>Nouveau rendez-vous</h1>
+<p>Reservation intelligente avec verification anti double-booking.</p>
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    {% if patients %}
+        <p>
+            <label for="id_patient_id">Patient</label>
+            <select id="id_patient_id" name="patient_id" required>
+                <option value="">Choisir un patient</option>
+                {% for patient in patients %}
+                    <option value="{{ patient.id }}">{{ patient }}</option>
+                {% endfor %}
+            </select>
+        </p>
+    {% endif %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer le rendez-vous</button>
+</form>
+<p class="auth-note"><a href="{% url 'appointments-list' %}">Voir l'agenda</a></p>
+{% endblock %}

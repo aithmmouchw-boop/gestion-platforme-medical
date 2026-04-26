@@ -1,0 +1,32 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Dashboard Patient{% endblock %}
+
+{% block content %}
+<h1>Espace Patient</h1>
+<p>Historique personnel, rendez-vous, ordonnances et suivi medical.</p>
+<p>
+    <a class="logout-link" href="{% url 'appointment-create' %}">Prendre un rendez-vous</a> |
+    <a class="logout-link" href="{% url 'appointments-list' %}">Mes rendez-vous</a> |
+    <a class="logout-link" href="{% url 'patient-timeline' %}">Timeline sante</a>
+</p>
+<h3>Score de risque IA: {{ risk.score }}/100 ({{ risk.status }})</h3>
+<p>Recommandation: prochain suivi dans {{ risk.followup_days }} jours.</p>
+{% if appointments %}
+<h3>Mes prochains rendez-vous</h3>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.appointment_date }} {{ appointment.appointment_time }} - {{ appointment.doctor }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if consultations %}
+<h3>Dernieres consultations</h3>
+<ul>
+    {% for consultation in consultations %}
+        <li>{{ consultation.created_at|date:"d/m/Y" }} - {{ consultation.diagnosis }} ({{ consultation.get_severity_display }})</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<a class="logout-link" href="{% url 'logout' %}">Se deconnecter</a>
+{% endblock %}

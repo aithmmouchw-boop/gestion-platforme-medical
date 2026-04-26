@@ -1,0 +1,451 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Medicale Intelligente</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}?v=20260425-4">
+</head>
+<body>
+    <div class="page-glow"></div>
+    <main>
+        <section class="hero-shell">
+            <header class="topbar">
+                <div class="brand-wrap">
+                    <span class="brand-dot"></span>
+                    <div class="brand">
+                        <strong>mediflow.ma</strong>
+                        <small>Solution cloud medicale</small>
+                    </div>
+                </div>
+                <nav class="menu">
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="{% url 'page-benefices' %}">Bénéfices</a>
+                    <a href="{% url 'page-tarifs' %}">Tarifs</a>
+                    <a href="{% url 'page-temoignages' %}">Témoignages</a>
+                    <a href="{% url 'page-blog' %}">Blog</a>
+                    <a href="{% url 'contact-page' %}">Contact</a>
+                    <a class="btn btn-outline" href="{% url 'login' %}">Aperçu</a>
+                    <a class="btn btn-primary btn-small" href="{% url 'register' %}">Essayer</a>
+                </nav>
+            </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="version-badge">⭐ +500 medecins au Maroc nous font confiance</span>
+                <p class="tagline">Plateforme medicale nouvelle generation</p>
+                <h1>Gerez votre cabinet medical depuis n'importe ou.</h1>
+                <p class="subtitle">
+                    MediFlow est une solution cloud pour medecins et cliniques:
+                    rendez-vous, dossiers patients, ordonnances et suivi intelligent
+                    dans une seule interface rapide et moderne.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="{% url 'register' %}">Demarrer maintenant</a>
+                    <a class="btn btn-ghost" href="{% url 'login' %}">Voir la démo</a>
+                </div>
+                <div class="hero-trust">
+                    <span>🛡 Donnees securisees</span>
+                    <span>☁ 100% Cloud</span>
+                    <span>📱 Multi-appareils</span>
+                </div>
+            </div>
+
+            <aside class="hero-panel">
+                <button class="media-button interactive-media" type="button" aria-label="Apercu dashboard medical">
+                    <img class="hero-illustration" src="{% static 'images/medical-hero.svg' %}" alt="Equipe medicale en consultation">
+                </button>
+                <div class="mock-kpis">
+                    <div><strong class="counter" data-target="24">0</strong><span>RDV aujourd'hui</span></div>
+                    <div><strong class="counter" data-target="1248">0</strong><span>Patients</span></div>
+                    <div><strong class="counter" data-target="23" data-suffix="%">0</strong><span>Revenus</span></div>
+                </div>
+            </aside>
+        </section>
+        </section>
+
+        <section class="search-section" id="search">
+            <h2>Recherche rapide</h2>
+            <div class="search-grid">
+                <input type="text" placeholder="Specialite (Cardiologie, Pediatrie...)">
+                <input type="text" placeholder="Ville">
+                <select>
+                    <option>Choose doctor</option>
+                    <option>Dr. Wafae Ait Hmmouch</option>
+                    <option>Dr. Chaimaa Elgharzaoui</option>
+                    <option>Dr. Youness Belkadi</option>
+                </select>
+                <input type="date">
+                <button class="btn btn-primary" type="button">Rechercher</button>
+            </div>
+        </section>
+
+        <section class="doctor-marquee">
+            <p>UTILISE PAR DES PROFESSIONNELS DE SANTE DANS TOUT LE MAROC</p>
+            <div class="marquee-track">
+                <span>Dr. Wafae Ait Hmmouch</span>
+                <span>Dr. Chaimaa Elgharzaoui</span>
+                <span>Dr. Youness Belkadi</span>
+                <span>Dr. Ayoub Jaber</span>
+                <span>Dr. Abdelbari Bayado</span>
+                <span>Dr. Wafae Ait Hmmouch</span>
+                <span>Dr. Chaimaa Elgharzaoui</span>
+                <span>Dr. Youness Belkadi</span>
+                <span>Dr. Ayoub Jaber</span>
+                <span>Dr. Abdelbari Bayado</span>
+            </div>
+        </section>
+
+        <section class="services" id="features">
+            <div class="section-head">
+                <span class="mini-tag">FONCTIONNALITES</span>
+                <h2>Tout ce dont votre cabinet a besoin, en un seul endroit.</h2>
+                <p>Medic centralise toutes les outils essentiels pour une gestion efficace et moderne de votre pratique medicale.</p>
+            </div>
+            <div class="service-grid">
+                <article class="service-card">
+                    <span class="service-icon">👥</span>
+                    <h3>Gestion des Rendez-vous</h3>
+                    <p>Agenda intelligent avec notifications et prevention des conflits.</p>
+                    <ul>
+                        <li>Vue agenda</li>
+                        <li>Rappels auto</li>
+                        <li>Historique RDV</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">🧾</span>
+                    <h3>Dossier Patient Complet</h3>
+                    <p>Historique des consultations, traitements et suivi structure.</p>
+                    <ul>
+                        <li>Fiche patient</li>
+                        <li>Documents</li>
+                        <li>Notes cliniques</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">📋</span>
+                    <h3>Historique medical</h3>
+                    <p>Timeline dynamique de l'evolution du patient.</p>
+                    <ul>
+                        <li>Suivi date par date</li>
+                        <li>Niveaux de severite</li>
+                        <li>Vision rapide</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">💊</span>
+                    <h3>Ordonnances & Documents</h3>
+                    <p>Generation d'ordonnances et documents professionnels.</p>
+                    <ul>
+                        <li>Ordonnance</li>
+                        <li>Certificat</li>
+                        <li>Export PDF</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">💰</span>
+                    <h3>Facturation & Encaissements</h3>
+                    <p>Gestion des paiements et suivi des recettes.</p>
+                    <ul>
+                        <li>Factures automatiques</li>
+                        <li>Suivi paiement</li>
+                        <li>Comptabilite simple</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Tableau de Bord & Stats</h3>
+                    <p>Analyse en temps reel des performances.</p>
+                    <ul>
+                        <li>KPI en direct</li>
+                        <li>Indicateurs IA</li>
+                        <li>Rapports exportables</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">🏥</span>
+                    <h3>Gestion Stock</h3>
+                    <p>Suivi des fournitures et alertes de stock.</p>
+                    <ul>
+                        <li>Inventaire</li>
+                        <li>Alerte rupture</li>
+                        <li>Optimisation achat</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <span class="service-icon">🤖</span>
+                    <h3>IA Medicale</h3>
+                    <p>Score de risque et recommandations automatiques.</p>
+                    <ul>
+                        <li>Risque 0-100</li>
+                        <li>Alerte priorite</li>
+                        <li>Suivi recommande</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="interface-section">
+            <div class="section-head interface-head">
+                <span class="mini-tag dark">INTERFACE INTUITIVE</span>
+                <h2>Une interface pensée pour les médecins</h2>
+                <p>Simple, rapide et conçue pour minimiser les clics et maximiser votre temps avec les patients.</p>
+            </div>
+            <div class="interface-tabs">
+                <a class="tab-btn active preview-tab" href="#" data-target-panel="panel-dashboard">Dashboard</a>
+                <a class="tab-btn preview-tab" href="#" data-target-panel="panel-agenda">Agenda</a>
+                <a class="tab-btn preview-tab" href="#" data-target-panel="panel-fichier">Fiche Patient</a>
+            </div>
+            <div class="interface-preview">
+                <div id="panel-dashboard" class="preview-panel active">
+                    <h3>Bonjour, Dr. Narjiss 👋</h3>
+                    <div class="preview-cards">
+                        <article><strong>24</strong><span>RDV aujourd'hui</span></article>
+                        <article><strong>1,248</strong><span>Total patients</span></article>
+                        <article><strong>18.5k</strong><span>Revenus</span></article>
+                        <article><strong>3</strong><span>Absences</span></article>
+                    </div>
+                </div>
+                <div id="panel-agenda" class="preview-panel">
+                    <h3>Lundi 2 Juin 2025</h3>
+                    <ul class="agenda-list">
+                        <li><span>08:30</span><strong>nada.Fassi</strong><em>Consultation générale</em></li>
+                        <li><span>09:00</span><strong>Fatima Zahrani</strong><em>Suivi hypertension</em></li>
+                        <li><span>10:00</span><strong>kamal.Nouri</strong><em>Nouveau patient</em></li>
+                        <li><span>10:30</span><strong>aziz.Bouzid</strong><em>Urgence</em></li>
+                    </ul>
+                </div>
+                <div id="panel-fichier" class="preview-panel">
+                    <h3>Fiche patient</h3>
+                    <div class="badge-row">
+                        <span>Allergies: Pénicilline</span>
+                        <span>Diabète type 2</span>
+                        <span>Groupe sanguin: A+</span>
+                    </div>
+                    <ul class="fichier-list">
+                        <li><b>15/05/2025</b> Consultation - Contrôle glycémique</li>
+                        <li><b>02/04/2025</b> Suivi - Résultats bilan sanguin</li>
+                        <li><b>10/03/2025</b> Urgence - Douleurs thoraciques</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="doctors" id="doctors">
+            <div class="section-head">
+                <h2>Nos medecins</h2>
+                <p>Selectionnez le specialiste adapte avec un affichage clair et moderne.</p>
+            </div>
+            <div class="doctor-filter">
+                <button class="chip active">Tous</button>
+                <button class="chip">Cardiologie</button>
+                <button class="chip">Pediatrie</button>
+                <button class="chip">Dermatologie</button>
+            </div>
+            <div class="doctor-grid">
+                <article class="doctor-card">
+                    <button class="media-button interactive-media" type="button" aria-label="Voir Dr. Wafae Ait Hmmouch">
+                        <img src="{% static 'images/care-team.svg' %}" alt="Docteur Wafae Ait Hmmouch">
+                        <span class="doctor-chip">Top cardiologue</span>
+                    </button>
+                    <h3>Dr. Wafae Ait Hmmouch</h3>
+                    <p>Cardiologue</p>
+                    <a href="{% url 'appointment-create' %}" class="btn btn-primary">Reserver</a>
+                </article>
+                <article class="doctor-card">
+                    <button class="media-button interactive-media" type="button" aria-label="Voir Dr. Chaimaa Elgharzaoui">
+                        <img src="{% static 'images/happy-patient.svg' %}" alt="Docteur Chaimaa Elgharzaoui">
+                        <span class="doctor-chip">Pediatrie premium</span>
+                    </button>
+                    <h3>Dr. Chaimaa Elgharzaoui</h3>
+                    <p>Pediatre</p>
+                    <a href="{% url 'appointment-create' %}" class="btn btn-primary">Reserver</a>
+                </article>
+                <article class="doctor-card">
+                    <button class="media-button interactive-media" type="button" aria-label="Voir Dr. Youness Belkadi">
+                        <img src="{% static 'images/medical-hero.svg' %}" alt="Docteur Youness Belkadi">
+                        <span class="doctor-chip">Dermatologie elite</span>
+                    </button>
+                    <h3>Dr. Youness Belkadi</h3>
+                    <p>Dermatologue</p>
+                    <a href="C:\Users\waith\OneDrive\Desktop\gestion platforme medical\photos\WhatsApp Image 2026-04-25 at 11.39.36 PM.jpeg" class="btn btn-primary">Reserver</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <div class="section-head">
+                <h2>Statistiques en direct</h2>
+                <p>Un apercu rapide de l'activite de votre plateforme.</p>
+            </div>
+            <div class="stats-counters">
+                <article><h3 class="counter" data-target="2450">0</h3><p>Patients actifs</p></article>
+                <article><h3 class="counter" data-target="186">0</h3><p>RDV aujourd'hui</p></article>
+                <article><h3 class="counter" data-target="128">0</h3><p>Medecins disponibles</p></article>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="performance-left">
+                <span class="mini-tag">ROI PROUVÉ</span>
+                <h2>Medic transforme votre cabinet en machine de performance</h2>
+                <div class="perf-points">
+                    <article>
+                        <h3>Gagnez 2h par jour</h3>
+                        <p>Automatisez les tâches administratives répétitives et concentrez-vous sur les patients.</p>
+                    </article>
+                    <article>
+                        <h3>-60% d'absences non signalées</h3>
+                        <p>Rappels intelligents et confirmations automatiques des rendez-vous.</p>
+                    </article>
+                    <article>
+                        <h3>Zéro dossier perdu</h3>
+                        <p>Tous les dossiers patients sont centralisés, sauvegardés et accessibles en permanence.</p>
+                    </article>
+                    <article>
+                        <h3>Image moderne & professionnelle</h3>
+                        <p>Un cabinet digitalisé inspire confiance et améliore la satisfaction patient.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="performance-right">
+                <article><h3 class="counter" data-target="60" data-suffix="%">0</h3><p>Réduction des absences</p></article>
+                <article><h3 class="counter" data-target="2" data-suffix="h">0</h3><p>Gagnées par jour</p></article>
+                <article><h3 class="counter" data-target="500">0</h3><p>Médecins satisfaits</p></article>
+                <article><h3 class="counter" data-target="98" data-suffix="%">0</h3><p>Taux de satisfaction</p></article>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="section-head interface-head">
+                <span class="mini-tag dark">TARIFICATION</span>
+                <h2>Un prix simple, tout inclus</h2>
+                <p>Pas de surprise, pas de frais caches. Choisissez la formule adaptee a votre structure.</p>
+            </div>
+            <div class="pricing-switch">
+                <span>Mensuel</span>
+                <button id="pricing-toggle" type="button" aria-label="Changer de periode de prix"></button>
+                <span>Annuel <strong>-20%</strong></span>
+            </div>
+            <div class="pricing-grid">
+                <article class="price-card">
+                    <h3>Solo</h3>
+                    <p>Pour les medecins independants</p>
+                    <h4><span>DH</span> <strong class="price-value" data-monthly="250" data-yearly="200">250</strong> /mois</h4>
+                    <a class="btn btn-outline" href="{% url 'register' %}">Choisir Solo</a>
+                </article>
+                <article class="price-card featured">
+                    <span class="popular-tag">Le plus populaire</span>
+                    <h3>Cabinet</h3>
+                    <p>Pour les cabinets en croissance</p>
+                    <h4><span>DH</span> <strong class="price-value" data-monthly="450" data-yearly="360">450</strong> /mois</h4>
+                    <a class="btn btn-primary" href="{% url 'register' %}">Choisir Cabinet</a>
+                </article>
+                <article class="price-card">
+                    <h3>Clinique</h3>
+                    <p>Pour polycliniques et cliniques</p>
+                    <h4><strong>Sur devis</strong></h4>
+                    <a class="btn btn-primary" href="{% url 'contact-page' %}">Contactez-nous</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <h2>Essayez MediFlow dès aujourd'hui</h2>
+            <div class="cta-actions">
+                <a class="btn cta-btn" href="{% url 'page-dashboard' %}">Démo</a>
+                <a class="btn cta-btn" href="{% url 'page-brochure' %}">Brochure</a>
+                <a class="btn cta-btn" href="{% url 'register' %}">S’abonner</a>
+            </div>
+            <p>● Simplicité &nbsp;&nbsp; ● Efficacité &nbsp;&nbsp; ● Support inclus</p>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-head">
+                <span class="mini-tag">FAQ</span>
+                <h2>Questions fréquentes</h2>
+                <p>Tout ce que vous devez savoir avant de vous lancer.</p>
+            </div>
+            <div class="faq-grid">
+                <details><summary>Mes données sont-elles sécurisées ?</summary><p>Oui, chiffrement, accès sécurisé et sauvegardes régulières.</p></details>
+                <details><summary>Est-ce difficile à prendre en main ?</summary><p>Non, l’interface est intuitive et nous proposons un accompagnement.</p></details>
+                <details><summary>Dois-je faire des sauvegardes ?</summary><p>La plateforme gère automatiquement les sauvegardes essentielles.</p></details>
+                <details><summary>Comment fonctionne le logiciel ?</summary><p>Tout est centralisé : rendez-vous, patients, ordonnances et facturation.</p></details>
+                <details><summary>Quel support proposez-vous ?</summary><p>Support email et assistance rapide selon votre plan.</p></details>
+                <details><summary>Puis-je annuler à tout moment ?</summary><p>Oui, vous pouvez arrêter selon les conditions du plan choisi.</p></details>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="section-head">
+                <span class="mini-tag">BLOG MÉDICAL</span>
+                <h2>Ressources pour les professionnels de santé</h2>
+                <p>Conseils pratiques, actualités et guides pour optimiser votre cabinet médical.</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-cover c1"></div>
+                    <h3>Comment digitaliser votre cabinet médical au Maroc</h3>
+                    <p>Guide complet pour passer à une gestion moderne.</p>
+                    <a href="{% url 'blog-article-protection' %}">Lire l’article →</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-cover c2"></div>
+                    <h3>Réduire les absences patients avec les rappels automatiques</h3>
+                    <p>Des actions concrètes pour améliorer votre agenda.</p>
+                    <a href="{% url 'blog-article-protection' %}">Lire l’article →</a>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-cover c3"></div>
+                    <h3>Protection des données de santé au Maroc : ce qu’il faut savoir</h3>
+                    <p>Les points légaux essentiels pour votre cabinet.</p>
+                    <a href="{% url 'blog-article-protection' %}">Lire l’article →</a>
+                </article>
+            </div>
+            <p class="blog-all">
+                <a class="btn btn-outline" href="{% url 'page-blog' %}">Voir tous les articles du blog</a>
+            </p>
+        </section>
+
+        <section class="ai-feature">
+            <div class="ai-left">
+                <h2>Smart Health Tracking & AI Risk Score</h2>
+                <p>
+                    Notre module intelligent detecte les profils sensibles et propose des actions de suivi
+                    personnalisees pour ameliorer la qualite des soins.
+                </p>
+                <ul>
+                    <li>Evaluation du risque de 0 a 100</li>
+                    <li>Alerte automatique des patients prioritaires</li>
+                    <li>Suggestion de revisite et actions recommandee</li>
+                </ul>
+            </div>
+            <div class="ai-right">
+                <div class="risk-flow">
+                    <span class="risk red">Risque eleve</span>
+                    <span class="arrow">→</span>
+                    <span class="risk orange">Risque moyen</span>
+                    <span class="arrow">→</span>
+                    <span class="risk green">Risque faible</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer-brand">
+            <strong>MediFlow</strong>
+            <p>Plateforme medicale intelligente et securisee.</p>
+        </div>
+        <div class="footer-links">
+            <a href="{% url 'contact-page' %}">Contact</a>
+            <a href="{% url 'page-blog' %}">Blog</a>
+            <a href="{% url 'page-tarifs' %}">Tarifs</a>
+            <a href="{% url 'page-temoignages' %}">Temoignages</a>
+        </div>
+    </footer>
+    <script src="{% static 'js/landing.js' %}?v=20260425-3"></script>
+</body>
+</html>

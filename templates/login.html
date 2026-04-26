@@ -1,0 +1,31 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Connexion - MediFlow{% endblock %}
+
+{% block content %}
+<h1>Connexion</h1>
+<p>Connectez-vous pour acceder a votre espace selon votre role.</p>
+<div class="auth-quick-actions">
+    <a class="quick-btn" href="{% url 'page-dashboard' %}">Démo</a>
+    <a class="quick-btn" href="{% url 'page-brochure' %}">Brochure</a>
+    <a class="quick-btn" href="{% url 'contact-page' %}">Contactez-nous</a>
+</div>
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="form-errors">{{ form.non_field_errors }}</div>
+    {% endif %}
+    <p>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.username.errors }}
+    </p>
+    <p>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+        {{ form.password.errors }}
+    </p>
+    <button type="submit">Se connecter</button>
+</form>
+<p class="auth-note">Pas encore de compte ? <a href="{% url 'register' %}">Inscription</a></p>
+{% endblock %}

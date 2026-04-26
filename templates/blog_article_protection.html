@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection des données de santé au Maroc</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}?v=20260425-2">
+</head>
+<body>
+    <main class="auth-shell">
+        <section class="auth-card">
+            <a class="back-link" href="{% url 'landing-page' %}">← Retour à l’accueil</a>
+            <h1>Protection des données de santé au Maroc</h1>
+            <p>Ce guide explique les bonnes pratiques pour sécuriser les informations patients dans un cabinet médical.</p>
+            <h3>1) Pourquoi c’est crucial</h3>
+            <p>Les données médicales sont sensibles et doivent être protégées par des règles strictes d’accès, de stockage et de confidentialité.</p>
+            <h3>2) Mesures recommandées</h3>
+            <ul>
+                <li>Accès par rôles (admin, secrétaire, médecin, patient)</li>
+                <li>Mots de passe robustes et renouvelés</li>
+                <li>Journalisation des actions sensibles</li>
+                <li>Sauvegardes régulières</li>
+            </ul>
+            <h3>3) Conformité et organisation interne</h3>
+            <p>Définissez une politique interne de gestion des données, formez l’équipe et contrôlez les droits d’accès.</p>
+            <p class="auth-note"><a href="{% url 'contact-page' %}">Contactez-nous pour un audit sécurité</a></p>
+        </section>
+    </main>
+</body>
+</html>

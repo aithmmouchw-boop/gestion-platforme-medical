@@ -1,0 +1,22 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Timeline sante{% endblock %}
+
+{% block content %}
+<h1>Timeline de sante</h1>
+<p>Score de risque actuel: <strong>{{ risk.score }}/100 ({{ risk.status }})</strong></p>
+<p>Suggestion IA: revisite dans {{ risk.followup_days }} jours.</p>
+{% if consultations %}
+<ul>
+    {% for consultation in consultations %}
+        <li>
+            <strong>{{ consultation.created_at|date:"d/m/Y" }}</strong> -
+            {{ consultation.diagnosis }} ({{ consultation.get_severity_display }})
+            {% if consultation.timeline_color == "red" %}🔴{% elif consultation.timeline_color == "orange" %}🟠{% else %}🟢{% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Aucune consultation enregistree.</p>
+{% endif %}
+{% endblock %}

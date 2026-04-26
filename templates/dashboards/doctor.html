@@ -1,0 +1,18 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Dashboard Medecin{% endblock %}
+
+{% block content %}
+<h1>Espace Medecin</h1>
+<p>Consultations, dossiers patients, prescriptions et suivi du risque.</p>
+<ul>
+    <li>Rendez-vous aujourd'hui: {{ today_count }}</li>
+    <li>Total a venir: {{ upcoming_count }}</li>
+    <li>Consultations enregistrees: {{ consultation_count }}</li>
+</ul>
+<p>
+    <a class="logout-link" href="{% url 'appointments-list' %}">Voir mon planning</a> |
+    <a class="logout-link" href="{% url 'consultation-create' %}">Nouvelle consultation</a>
+</p>
+<a class="logout-link" href="{% url 'logout' %}">Se deconnecter</a>
+{% endblock %}

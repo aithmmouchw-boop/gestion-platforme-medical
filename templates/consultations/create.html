@@ -1,0 +1,16 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Nouvelle consultation{% endblock %}
+
+{% block content %}
+<h1>Nouvelle consultation</h1>
+<p>Ajoutez un diagnostic, un niveau de severite et une ordonnance.</p>
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <h3>Ordonnance</h3>
+    {{ prescription_form.as_p }}
+    <button type="submit">Enregistrer consultation</button>
+</form>
+<p class="auth-note"><a href="{% url 'appointments-list' %}">Retour a l'agenda</a></p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block content %}
+<h1>Contactez-nous</h1>
+<p>Laissez vos informations et notre equipe vous recontacte rapidement.</p>
+{% if success %}
+<p class="auth-note">Message envoye avec succes. Merci !</p>
+{% endif %}
+<form method="post" class="auth-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Envoyer</button>
+</form>
+{% endblock %}

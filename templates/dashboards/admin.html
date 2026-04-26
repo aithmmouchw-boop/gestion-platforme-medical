@@ -1,0 +1,15 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Dashboard Admin{% endblock %}
+
+{% block content %}
+<h1>Espace Administrateur</h1>
+<p>Gestion complete du systeme: utilisateurs, medecins, parametres globaux.</p>
+<ul>
+    <li>Utilisateurs: {{ users_count }}</li>
+    <li>Medecins: {{ doctors_count }}</li>
+    <li>Rendez-vous: {{ appointments_count }}</li>
+</ul>
+<p><a class="logout-link" href="{% url 'appointments-list' %}">Voir tous les rendez-vous</a></p>
+<a class="logout-link" href="{% url 'logout' %}">Se deconnecter</a>
+{% endblock %}
